@@ -1,0 +1,57 @@
+/* VideoPage.css */
+
+/* Container for the entire page */
+.video-container {
+  padding: 20px;
+  background-image: url('../../assets/background.jpg'); /* Replace with your background image path */
+  background-size: cover;
+  background-position: center;
+}
+
+/* Card styling */
+.video-card {
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Image styling within the card */
+.card-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Button styling */
+.play-button {
+  width: 100%;
+}
+
+/* Modal styling */
+.modal-dialog {
+  max-width: 90%;
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+/* Responsive design for different screen sizes */
+@media (max-width: 767px) {
+  .video-card {
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .video-card {
+    width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .video-card {
+    width: 18rem;
+  }
+}

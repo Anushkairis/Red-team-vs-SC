@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.signup-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('../../assets/dark.jpg');
+  background-size: cover;
+  background-position: center;
+  backdrop-filter: blur(20px);
+  color: #fff;
+}
+
+.container-form {
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, .2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+  border-radius: 10px;
+  width: 100%;
+  max-width: 650px;
+  padding: 30px 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.container-form h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.container-form p {
+  margin-bottom: 20px;
+}
+
+.container-form hr {
+  border: 1px solid #fff;
+  margin-bottom: 20px;
+}
+
+.container-form label {
+  text-align: left;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.container-form input {
+  width: 100%;
+  align-items: left;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 1rem;
+}
+
+.container-form .team-selection {
+  margin-bottom: 20px;
+}
+
+.team-selection p {
+  margin-bottom: 10px;
+}
+
+.team-selection button {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  cursor: pointer;
+}
+
+.team-selection button.selected {
+  background: rgba(67, 42, 212, 0.3);
+}
+
+.container-form .text-center {
+  text-align: center;
+}
+
+.container-form button[type="submit"] {
+  width: 50%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background: #fff;
+  color: #333;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.container-form button[type="submit"]:hover {
+  background: #f1f1f1;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .container-form {
+    padding: 15px 20px;
+  }
+
+  .container-form h1 {
+    font-size: 1.5rem;
+  }
+
+  .container-form input {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .team-selection button {
+    padding: 8px 15px;
+  }
+
+  .container-form button[type="submit"] {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container-form {
+    padding: 10px 15px;
+  }
+
+  .container-form h1 {
+    font-size: 1.2rem;
+  }
+
+  .container-form input {
+    font-size: 0.8rem;
+    padding: 6px;
+  }
+
+  .team-selection button {
+    padding: 6px 10px;
+  }
+
+  .container-form button[type="submit"] {
+    padding: 6px;
+    font-size: 0.8rem;
+  }
+}

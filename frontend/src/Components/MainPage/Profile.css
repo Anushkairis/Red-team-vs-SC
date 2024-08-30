@@ -1,0 +1,46 @@
+/* For larger screens */
+.gradient-custom {
+  background: #f6d365;
+  background: -webkit-linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1));
+  background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1));
+  padding: 20px;
+}
+
+.card-custom {
+  width: 100%;
+  padding: 20px;
+}
+
+.avatar-custom {
+  width: 100px;
+}
+
+/* For medium screens (tablets) */
+@media (max-width: 768px) {
+  .gradient-custom {
+    padding: 15px;
+  }
+
+  .card-custom {
+    padding: 15px;
+  }
+
+  .avatar-custom {
+    width: 80px;
+  }
+}
+
+/* For small screens (phones) */
+@media (max-width: 576px) {
+  .gradient-custom {
+    padding: 10px;
+  }
+
+  .card-custom {
+    padding: 10px;
+  }
+
+  .avatar-custom {
+    width: 60px;
+  }
+}

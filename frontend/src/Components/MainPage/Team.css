@@ -1,0 +1,38 @@
+.team {
+  background-image: url('../../assets/background.jpg');
+  background-size: cover; /* Cover the entire viewport */
+  background-position: center;  
+  background-repeat: no-repeat;
+}
+
+.page-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.team-row {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 256.23px;
+}
+
+.team-col2 {
+  flex: 1;
+  margin: 0 10px; /* Adjust spacing between columns */
+  margin-left: 133px;
+}
+
+.team-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.team-table th, .team-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.team-table th {
+  background-color: #f4f4f4;
+}

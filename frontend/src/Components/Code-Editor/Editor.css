@@ -1,0 +1,172 @@
+/* General Editor Styling */
+.editor {
+    max-height: 100vh;
+    width: 100%;
+    overflow-y: hidden;
+    background-color: #474747;
+}
+
+/* Main Container */
+.main1 {
+    display: flex;
+    height: calc(100vh - 50px);
+    flex-direction: row;
+}
+
+/* Left Container */
+.left-container {
+    position: relative;
+    flex: 60%;
+    height: calc(100vh - 50px);
+}
+
+/* Right Container */
+.right-container {
+    flex: 40%;
+    height: calc(100vh - 50px);
+    display: flex;
+    flex-direction: column;
+    background-color: #242424;
+    border-left: 3px solid #1f65e6;
+    padding: 5px;
+}
+
+/* Input Box */
+.input-box {
+    flex: 50%;
+}
+
+.input-box textarea {
+    font-size: 16px;
+}
+
+/* Spinner Box */
+.spinner-box {
+    flex: 50%;
+    background-color: #242424;
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spinner-box img {
+    width: 200px;
+}
+
+/* Output Box */
+.output-box {
+    flex: 50%;
+    background-color: #242424;
+    overflow-y: auto;
+    color: white;
+    position: relative;
+}
+
+.clear-btn {
+    position: absolute;
+    bottom: 14px;
+    right: 18px;
+    width: 80px;
+    height: 40px;
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+    background-color: #1f65e6;
+    border: none;
+    border-radius: 4px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.output-box pre {
+    font-size: 15px;
+    white-space: pre-wrap;
+}
+
+/* Headings */
+h4 {
+    color: #afec3f;
+}
+
+/* Code Input Area */
+#code-inp {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    resize: none;
+    background-color: #242424;
+    color: whitesmoke;
+    padding: 5px;
+}
+
+#code-inp:focus {
+    outline: none;
+}
+
+/* Run Button */
+.run-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 18px;
+    width: 80px;
+    height: 40px;
+    font-size: 22px;
+    font-weight: bold;
+    background-color: #afec3f;
+    border: none;
+    border-radius: 4px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.run-btn:active {
+    background-color: #6e9427;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    /* Adjust the layout for tablets */
+    .main1 {
+        flex-direction: column;
+    }
+
+    .left-container, .right-container {
+        flex: 100%;
+        height: auto;
+    }
+
+    .right-container {
+        border-left: none;
+        border-top: 3px solid #1f65e6;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Further adjustments for mobile devices */
+    .main1 {
+        flex-direction: column;
+    }
+
+    .left-container, .right-container {
+        flex: 100%;
+        height: auto;
+    }
+
+    .right-container {
+        border-left: none;
+        border-top: 3px solid #1f65e6;
+    }
+
+    .clear-btn, .run-btn {
+        bottom: 10px;
+        right: 10px;
+        width: 60px;
+        height: 35px;
+        font-size: 18px;
+    }
+
+    .output-box pre {
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,149 @@
+.quiz1 {
+  font-family: 'Anek Malayalam', sans-serif;
+  background: linear-gradient(90.04deg, #800080 0.03%, #ffc0cb 99.96%);
+  color: #11052c;
+  display: flex;
+  flex-direction: column; /* Stack items vertically for smaller screens */
+  justify-content: center;
+  align-items: center;
+  padding: 30px 20px; /* Adjust padding for better responsiveness */
+  max-width: 90%; /* Use a percentage to make the width flexible */
+  min-width: 250px;
+  border-radius: 4px;
+  margin-left: 56px;
+
+  /* Center the box on the screen */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.quiz1.active-question-no {
+  font-size: 32px;
+  font-weight: 500;
+  color: #800080;
+}
+
+.quiz1 .total-question {
+  font-size: 16px;
+  font-weight: 500;
+  color: #e0dee3;
+}
+
+.quiz1 h2 {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.quiz1 ul {
+  margin-top: 20px;
+  margin-left: 0; /* Align items correctly for smaller screens */
+  padding-left: 0; /* Remove padding to ensure alignment */
+}
+
+.quiz1 ul li {
+  text-decoration: none;
+  list-style: none;
+  color: #2d264b;
+  font-size: 16px;
+  background: #ffffff;
+  border: 1px solid #eaeaea;
+  border-radius: 16px;
+  padding: 11px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.quiz1 ul .selected-answer {
+  background: #ffd6ff;
+  border: 1px solid #800080;
+}
+
+.quiz1 button:disabled {
+  background: #e7e8e9;
+  color: #9fa3a9;
+  cursor: not-allowed;
+}
+
+.flex-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.result h3 {
+  font-size: 24px;
+  letter-spacing: 1.4px;
+  text-align: center;
+}
+
+.result p {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.result p span {
+  color: #800080;
+  font-size: 22px;
+}
+
+.quiz1 button {
+  background: linear-gradient(90.04deg, #800080 0.03%, #ffc0cb 99.96%);
+  border-radius: 9px;
+  font-size: 18px;
+  color: #ffffff;
+  padding: 10px 42px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .quiz1 {
+    padding: 20px 15px; /* Reduce padding on smaller screens */
+    max-width: 100%; /* Ensure the quiz takes up the full width of the screen */
+    min-width: unset; /* Allow width to shrink as needed */
+    margin-left: 0; /* Remove margin to center the quiz */
+    transform: translate(-50%, -40%); /* Adjust vertical centering */
+  }
+
+  .quiz1.active-question-no {
+    font-size: 24px; /* Reduce font size for smaller screens */
+  }
+
+  .quiz1 h2 {
+    font-size: 18px; /* Reduce font size for smaller screens */
+  }
+
+  .result h3 {
+    font-size: 20px; /* Reduce font size for smaller screens */
+  }
+
+  .quiz1 button {
+    font-size: 16px; /* Reduce button font size for smaller screens */
+    padding: 8px 32px; /* Adjust padding for smaller buttons */
+  }
+}
+
+@media (max-width: 480px) {
+  .quiz1 {
+    padding: 15px 10px; /* Further reduce padding for very small screens */
+    transform: translate(-50%, -30%); /* Adjust vertical centering */
+  }
+
+  .quiz1 ul li {
+    font-size: 14px; /* Smaller font size for options */
+    padding: 8px; /* Reduce padding for options */
+  }
+
+  .quiz1.active-question-no {
+    font-size: 20px; /* Further reduce font size */
+  }
+
+  .result h3 {
+    font-size: 18px; /* Further reduce font size */
+  }
+}
