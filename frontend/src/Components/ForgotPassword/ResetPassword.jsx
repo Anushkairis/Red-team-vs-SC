@@ -11,10 +11,12 @@ const ResetPassword = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        alert(resetToken)
         try {
-            await axios.post(`/api/auth/resetpassword/${resetToken}`, { password, otp });
+            await axios.post(`http://localhost:5000/api/auth/resetpassword/${resetToken}`, { password, otp });
             setMessage('Password has been reset successfully');
         } catch (error) {
+            console.log(error)
             setMessage('Error resetting password. Ensure OTP and token are valid.');
         }
     };

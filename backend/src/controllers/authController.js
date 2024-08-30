@@ -117,7 +117,7 @@ async function resetPassword(req, res) {
     }
 
     // Check if the OTP matches
-    if (resetPasswordEntry.otp !== otp) {
+    if (resetPasswordEntry.otp != otp) {
         console.log("Invalid OTP");
         return res.status(400).send('Invalid OTP');
     }
@@ -131,7 +131,7 @@ async function resetPassword(req, res) {
     }
 
     // Hash the new password
-    user.password = await bcrypt.hash(password, 12);
+    user.password = await bcryptjs.hash(password, 12);
 
     // Save the new password and remove the reset token and OTP
     await user.save();
