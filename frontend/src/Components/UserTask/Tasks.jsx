@@ -47,6 +47,17 @@ const Tasks = () => {
               </Card.Body>
             </Card>
           </Col>
+          <Col md={6} lg={4} className="mb-4">
+           <Card className='c' style={{ width: '18rem', height: 'auto' }}>
+             <Card.Img variant="top" src={TutorialLogo} alt="Tutorial Logo" className="card-img" />
+             <Card.Body>
+               <Card.Title>Course</Card.Title>
+                 <Link to="/overview">
+                   <Button variant="primary">GO</Button>
+                 </Link>
+              </Card.Body>
+            </Card>
+          </Col>
         </Row>
       </div>
    </body>

@@ -1,10 +1,10 @@
 .dashboard-container {
-  background-image: url('../../assets/background.jpg'); /* Replace with your background image path */
+  background-color: #D3D3D3 ; /* Replace with your background image path */
   background-size: cover;
   background-position: center;
   min-height: 100vh; /* Ensure the background covers the entire viewport height */
   padding: 20px; /* Adjust padding as needed */
-  color: #000; /* Default text color */
+  color:#6A5ACD ; /* Default text color */
 }
 
 /* Container for the slideshow */
@@ -64,6 +64,7 @@
 .mt-4.justify-content-center {
   margin-left: auto;
   margin-right: auto;
+  
 }
 
 /* Define card height and width */
@@ -92,12 +93,11 @@
   text-align: center;
 }
 
-h3 {
+/* h3 {
   font-size: 2rem;
   margin-bottom: 20px;
-  color: #333;
   text-transform: uppercase;
-}
+} */
 
 /* Responsive Styles */
 @media (max-width: 1200px) {

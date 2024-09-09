@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+
 import "./App.css";
 import MyProSidebar from "./Components/Sidebar/MyProSidebar";
 import Sidebar from "./Components/Sidebar/Sidebar";
@@ -17,10 +17,10 @@ import AdminDashboard from "./Components/MainPage/Admindash";
 import ForgotPassword from "./Components/ForgotPassword/ForgotPassword";
 import ResetPassword from "./Components/ForgotPassword/ResetPassword";
 import VideoPage from "./Components/UserTask/Tutorials";
-// import Footer from "./Footer";
 import Question from "./Components/Quizzes/question";
 import CodeEditor from "./Components/Code-Editor/Editor";
 import Navbar  from "./Components/Code-Editor/Navbar";
+import CourseDetail from "./Components/Overview";
 
 function App() {
   
@@ -32,17 +32,19 @@ function App() {
         <Route path="/userdashboard" element={<MyProSidebar />} />
         <Route path="/tasks" element={<MyProSidebar />} />
         <Route path="/tournaments" element={<MyProSidebar />} />
+        <Route path="/team" element={<MyProSidebar />} /> 
         <Route path="/profile" element={<MyProSidebar />} />
         <Route path="/code" element={<MyProSidebar />} />
         <Route path="/quizpage" element={<MyProSidebar />} />
         <Route path="/quiz/:quizName" element={<MyProSidebar />} /> 
         <Route path="/tutorials" element={<MyProSidebar />} />
+        <Route path= "/overview" element={<MyProSidebar />} />
       </Routes>
 
       {/* Render Sidebar in AdminDashboard */}
       <Routes>
         <Route path="/admindashboard" element={<Sidebar />} />
-        <Route path="/team" element={<Sidebar />} /> 
+        
       </Routes>
 
       {/* Main content routes */}
@@ -57,6 +59,7 @@ function App() {
         <Route path="/quizpage" element={<QuizPage />} />
         <Route path="/tutorials" element={<VideoPage />} />
         <Route path="/quiz/:quizName" element={<Question />} />
+        <Route path="/overview" element={<CourseDetail />} />
 
         {/* Non-sidebar routes */}
         <Route path="/" element={<Login />} />

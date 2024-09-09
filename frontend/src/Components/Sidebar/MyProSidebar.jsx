@@ -15,14 +15,13 @@ import { Link } from "react-router-dom"; // Import Link from react-router-dom
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHome,
-
   faTasks,
   faTrophy,
   faUser,
   faSignOutAlt,
   faArrowRight,
   faArrowLeft,
-  faUsers
+  faUsers,
 } from "@fortawesome/free-solid-svg-icons";
 
 const MyProSidebar = () => {
@@ -37,7 +36,7 @@ const MyProSidebar = () => {
       <ProSidebar collapsed={menuCollapse}>
         <SidebarHeader>
           <div className="logotext">
-            <p>{menuCollapse ? "Logo" : "Big Logo"}</p>
+            <p>{menuCollapse ? "C" : "CDAC"}</p>
           </div>
           <div className="closemenu" onClick={menuIconClick}>
             {menuCollapse ? (
@@ -54,7 +53,7 @@ const MyProSidebar = () => {
             </MenuItem>
             <MenuItem icon={<FontAwesomeIcon icon={faUsers} />}>
               <Link to="/team">Leaderboard</Link>
-            </MenuItem> 
+            </MenuItem>
             <MenuItem icon={<FontAwesomeIcon icon={faTasks} />}>
               <Link to="/tasks">Tasks</Link>
             </MenuItem>
@@ -69,11 +68,24 @@ const MyProSidebar = () => {
         <SidebarFooter>
           <Menu iconShape="square">
             <MenuItem icon={<FontAwesomeIcon icon={faSignOutAlt} />}>
-             <Link to="/">Logout</Link>
+              <Link to="/">Logout</Link>
             </MenuItem>
           </Menu>
         </SidebarFooter>
       </ProSidebar>
+
+      {/* Footer section, moved outside the header */}
+      <footer className="footer">
+        <p> 2024&copy; SecureCoders. All rights reserved.</p>
+        <ul className="footer-links">
+          <li>
+            <a href="#privacy">Privacy Policy</a>
+          </li>
+          <li>
+            <a href="#terms">Terms of Service</a>
+          </li>
+        </ul>
+      </footer>
     </div>
   );
 };

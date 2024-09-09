@@ -52,7 +52,7 @@ const Sidebar = () => {
               <Link to="/admindashboard">Dashboard</Link>
             </MenuItem>
             <MenuItem icon={<FontAwesomeIcon icon={faUsers} />}>
-              <Link to="/team">Team</Link>
+              <Link to="/#">Team</Link>
             </MenuItem>
             <MenuItem icon={<FontAwesomeIcon icon={faTasks} />}>
               <Link to="#">Tasks</Link>

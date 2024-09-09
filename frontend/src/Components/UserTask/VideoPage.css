@@ -3,9 +3,10 @@
 /* Container for the entire page */
 .video-container {
   padding: 20px;
-  background-image: url('../../assets/background.jpg'); /* Replace with your background image path */
+  background-color: #D3D3D3 ; /* Replace with your background image path */
   background-size: cover;
   background-position: center;
+  color:#6A5ACD ;
 }
 
 /* Card styling */

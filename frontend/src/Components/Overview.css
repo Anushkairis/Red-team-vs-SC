@@ -1,0 +1,172 @@
+/* CourseDetail.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  
+  .header {
+    background-color: #0046be;
+    padding: 10px 20px;
+    color: white;
+  }
+  
+  .nav-links {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .nav-links li {
+    display: inline;
+    margin-right: 20px;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .course-overview {
+    padding: 40px;
+    background-color: #fff;
+    text-align: center;
+  }
+  
+  .course-overview h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+  
+  .course-meta span {
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 16px;
+    color: #777;
+  }
+  
+  .course-description {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  .cta {
+    background-color: #f9a825;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .course-learn {
+    padding: 40px;
+    background-color: #f7f7f7;
+  }
+  
+  .course-learn h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .learn-items {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .learn-item {
+    background-color: #e3f2fd;
+    border-radius: 10px;
+    padding: 20px;
+    width: 20%;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  .course-content {
+    padding: 40px;
+    background-color: #fff;
+  }
+  
+  .course-content h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .content-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .content-list li {
+    background-color: #e3f2fd;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 18px;
+  }
+  
+  .instructor-bio {
+    padding: 40px;
+    background-color: #f7f7f7;
+    text-align: center;
+  }
+  
+  .instructor-bio h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+  
+  .student-reviews {
+    padding: 40px;
+    background-color: #fff;
+    text-align: center;
+  }
+  
+  .student-reviews h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+  
+  .review {
+    background-color: #e3f2fd;
+    padding: 20px;
+    margin: 10px auto;
+    width: 60%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  .review span {
+    display: block;
+    margin-top: 10px;
+    font-size: 20px;
+    color: #f9a825;
+  }
+  
+  .footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .footer-links {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .footer-links li {
+    display: inline;
+    margin-right: 20px;
+  }
+  
+  .footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  

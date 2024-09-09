@@ -1,73 +1,170 @@
+/* Main header/sidebar layout */
 #header {
-    position: absolute;
-    width: 220px;
-  }
-  #header .pro-sidebar {
-    height: 100vh;
-  }
-  #header .closemenu {
-    color: #000;
-    position: absolute;
-    right: 0;
-    z-index: 9999;
-    line-height: 20px;
-    border-radius: 50%;
-    font-weight: bold;
-    font-size: 22px;
-    top: 55px;
-    cursor: pointer;
-  }
-  #header .pro-sidebar {
-    width: 100%;
-    min-width: 100%;
-  }
-  #header .pro-sidebar.collapsed {
+  position: fixed;
+  width: 220px;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 1000;
+
+}
+
+#header .pro-sidebar {
+  height: 100%;
+  width: 100%;
+  min-width: 100%;
+}
+
+#header .pro-sidebar.collapsed {
+  width: 80px; /* Collapsed width for smaller screens */
+  min-width: 80px;
+}
+
+#header .pro-sidebar-inner {
+  background-color: #6A5ACD; /* Sidebar background image */
+  background-size: cover; /* Cover the entire sidebar */
+  background-position: center; /* Center the background image */
+  box-shadow: 0.5px 0.866px 2px rgba(0, 0, 0, 0.15);
+}
+
+#header .pro-sidebar-inner .pro-sidebar-layout {
+  overflow-y: auto;
+}
+
+/* Sidebar text styling */
+#header .pro-sidebar-inner .pro-sidebar-layout .logotext p {
+  font-size: 20px;
+  padding: 0 20px;
+  color:#D3D3D3; /* Text color set to white */
+  font-weight: bold;
+}
+
+#header .pro-sidebar-inner .pro-sidebar-layout ul {
+  padding: 0 5px;
+}
+
+#header .pro-sidebar-inner .pro-sidebar-layout ul .pro-inner-item {
+  color:#D3D3D3; /* Text color set to white */
+  margin: 10px 0px;
+  font-weight: bold;
+}
+
+#header .pro-sidebar-inner .pro-sidebar-layout ul .pro-inner-item .pro-icon-wrapper {
+  color: #FFFAFA; /* Text color set to white */
+  border-radius: 3px;
+}
+
+#header .pro-sidebar-inner .pro-sidebar-layout ul .pro-inner-item .pro-icon-wrapper .pro-item-content {
+  color: black; /* Text color set to white */
+}
+
+/* #header .pro-sidebar-inner .pro-sidebar-layout .active {
+  background-image: linear-gradient(0deg, #fece00 0%, #ffe172 100%);
+} */
+
+#header .logo {
+  padding: 20px;
+}
+
+#header .closemenu {
+  color: white; /* Close button color set to white */
+  position: absolute;
+  right: 0;
+  z-index: 9999;
+  line-height: 20px;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 22px;
+  top: 55px;
+  cursor: pointer;
+}
+
+/* Sidebar menu links */
+.pro-sidebar .pro-menu a {
+  color: white; /* Links color set to white */
+  padding-bottom: 10px;
+ 
+}
+
+/* Main content layout */
+.main-content {
+  margin-left: 220px;
+  padding: 20px;
+  overflow-y: auto;
+  height: 100vh;
+}
+
+/* Footer Styles */
+footer.footer {
+  position: fixed;
+  bottom: 0;
+  left: 220px; /* Same width as sidebar */
+  width: calc(100% - 220px); /* Adjust width based on sidebar width */
+  background-size: cover; /* Cover the entire footer */
+  background-position: center; /* Center the background image */
+  text-align: center;
+  padding: 10px 20px;
+  box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+}
+
+footer.footer p {
+  margin: 0;
+  font-size: 14px;
+  color: white;
+}
+
+footer.footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer.footer ul li {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+footer.footer ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+}
+
+footer.footer ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 720px) {
+  /* Collapsing sidebar on smaller screens */
+  #header {
     width: 80px;
-    min-width: 80px;
-  }
-  #header .pro-sidebar-inner {
-    background-color: white;
-    box-shadow: 0.5px 0.866px 2px 0px rgba(0, 0, 0, 0.15);
-  }
-  #header .pro-sidebar-inner .pro-sidebar-layout {
-    overflow-y: hidden;
-  }
-  #header .pro-sidebar-inner .pro-sidebar-layout .logotext p {
-    font-size: 20px;
-    padding: 0 20px;
-    color: #000;
-    font-weight: bold;
-  }
-  #header .pro-sidebar-inner .pro-sidebar-layout ul {
-    padding: 0 5px;
-  }
-  #header .pro-sidebar-inner .pro-sidebar-layout ul .pro-inner-item {
-    color: #000;
-    margin: 10px 0px;
-    font-weight: bold;
-  }
-  #header .pro-sidebar-inner .pro-sidebar-layout ul .pro-inner-item .pro-icon-wrapper {
-    background-color: #fbf4cd;
-    color: #000;
-    border-radius: 3px;
-  }
-  #header .pro-sidebar-inner .pro-sidebar-layout ul .pro-inner-item .pro-icon-wrapper .pro-item-content {
-    color: #000;
-  }
-  #header .pro-sidebar-inner .pro-sidebar-layout .active {
-    background-image: linear-gradient(0deg, #fece00 0%, #ffe172 100%);
-  }
-  #header .logo {
-    padding: 20px;
-  }
-  
-  @media only screen and (max-width: 720px) {
-    html {
-      overflow: hidden;
-    }
   }
 
-  .pro-sidebar .pro-menu a{
-    color: #000;
-
+  .main-content {
+    margin-left: 80px; /* Adjust the content margin for the collapsed sidebar */
   }
+
+  /* Hide text inside the sidebar when collapsed */
+  #header .pro-sidebar-inner .pro-sidebar-layout .logotext p,
+  #header .pro-sidebar-inner .pro-sidebar-layout ul .pro-inner-item .pro-item-content {
+    display: none;
+  }
+
+  /* Provide more room for mobile content */
+  .main-content {
+    padding: 10px;
+  }
+
+  /* Footer responsive styles */
+  footer.footer {
+    left: 80px; /* Match the collapsed sidebar width */
+    width: calc(100% - 80px); /* Adjust width based on the collapsed sidebar */
+    padding: 10px 10px; /* Adjust padding for smaller screens */
+  }
+
+  footer.footer ul li {
+    display: block; /* Stack the links vertically on smaller screens */
+    margin: 5px 0;
+  }
+}

@@ -1,8 +1,9 @@
 .dashboard {
     padding: 20px;
-    background-image: url('../../assets/background.jpg');
+    color:#6A5ACD ;
     background-size: cover;
     background-position: center;
+    background-color: #D3D3D3 ;
   }
 
 
@@ -22,7 +23,7 @@
   }
   
   .mt-0.card {
-    background-image: url('../../assets/background.jpg');
+  
     margin-bottom: 150px;
     width: 84%;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);

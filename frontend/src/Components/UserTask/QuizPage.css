@@ -1,8 +1,9 @@
 .quiz-page {
   padding: 20px;
-  background-image: url('../../assets/background.jpg');
+  background-color: #D3D3D3 ;
   background-size: cover;
   background-position: center;
+  color:#6A5ACD ;
 }
 
 .header {

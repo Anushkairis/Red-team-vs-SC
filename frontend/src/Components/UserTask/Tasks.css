@@ -1,23 +1,31 @@
-.bg{
-  background-image: url('../../assets/background.jpg');
+.bg {
+  color: #6A5ACD;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-color: #D3D3D3;
+  font-family: 'Poppins', sans-serif;
+  padding: 20px;
 }
 
 .card-con {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
- 
   padding: 20px;
+  min-height: 100vh; /* Ensure the cards are centered vertically */
 }
 
 .cc {
-  background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
+  background-color: rgba(255, 255, 255, 0.9);
   border-radius: 10px;
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 30px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.cc:hover {
+  transform: translateY(-5px);
 }
 
 .card-img {
@@ -30,16 +38,28 @@
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  justify-content: center;
 }
 
-@media (max-width: 767.98px) {
+@media (max-width: 991.98px) {
+  .card-con .row {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .cc {
     margin-bottom: 20px;
+    width: 100%; /* Full width for smaller screens */
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
+  .card-con .row {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
   .cc {
-    margin-bottom: 30px;
+    width: calc(33.333% - 20px); /* 3 cards per row with space between them */
   }
 }
