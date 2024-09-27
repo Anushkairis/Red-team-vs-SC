@@ -24,11 +24,11 @@ const SlideShow = () => (
   <Slide autoplay transitionDuration={500} arrows={false}>
     {slides.map((slideImage, index) => (
       <div className="each-slide-effect" key={index}>
-        <button className="nav-button left">❮</button>
+        <button className="nav-button left"></button>
         <div style={{ backgroundImage: `url(${slideImage})` }}>
-          <span>Slide {index + 1}</span>
+          <span>Slide {index + 1}</span>  
         </div>
-        <button className="nav-button right">❯</button>
+        <button className="nav-button right"></button>
       </div>
     ))}
   </Slide>
@@ -48,13 +48,14 @@ const TournamentCard = ({ name, date, registerLink }) => (
 );
 
 const Dashboard = () => {
-  const location = useLocation();
-  const { name } = location.state || {};
+ // Use location to access passed state (name)
+ const location = useLocation();
+ const { name } = location.state || { name: 'User' }; // Default to 'User' if name is not provided
 
   return (
     <div className="dashboard-container">
        <h1><h1>
-        {name ? <b>Welcome {name}!!</b> : 'Welcome!'}
+       Welcome {name}!
       </h1></h1> 
      
       <br />

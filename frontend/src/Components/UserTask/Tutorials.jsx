@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
-import { Modal, Button, Container, Row, Col, Card } from 'react-bootstrap';
+
+import { Modal, Button, Row, Col, Card } from 'react-bootstrap';
 import ReactPlayer from 'react-player';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import QuizLogo from '../../assets/quiz.jpg';

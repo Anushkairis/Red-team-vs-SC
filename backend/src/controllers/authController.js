@@ -33,24 +33,31 @@ async function signin(req, res) {
     const { email, password } = req.body;
 
     try {
+        // Find the user by email
         const user = await User.findOne({ email });
+
+        // If user is not found, return an error
         if (!user) {
             return res.status(401).json({ message: 'Invalid email' });
         }
 
+        // Compare the provided password with the stored hashed password
         const isMatch = await bcryptjs.compare(password, user.password);
         if (!isMatch) {
             return res.status(401).json({ message: 'Invalid password' });
         }
 
-        const { name , role } = user;
-        res.status(200).json({ message: 'Sign in successful', name ,role });
+        // Retrieve the user ID instead of role
+        const { _id, name } = user;
+        res.status(200).json({ message: 'Sign in successful', userId: _id, name });
     } catch (error) {
         console.error('Error signing in:', error);
         res.status(500).json({ message: 'Server error' });
     }
 }
 
+
+//Forgot Password
 async function ForgotPassword(req, res) {
     const { email } = req.body;
     console.log("Backend call", email);

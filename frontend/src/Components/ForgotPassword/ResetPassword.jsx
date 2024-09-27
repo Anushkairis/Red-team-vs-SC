@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Container, Box, Typography, TextField, Button } from '@mui/material';
 import axios from 'axios';
 
 const ResetPassword = () => {

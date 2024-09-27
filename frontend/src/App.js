@@ -20,7 +20,7 @@ import VideoPage from "./Components/UserTask/Tutorials";
 import Question from "./Components/Quizzes/question";
 import CodeEditor from "./Components/Code-Editor/Editor";
 import Navbar  from "./Components/Code-Editor/Navbar";
-import CourseDetail from "./Components/Overview";
+import CourseForm from "./Components/Overview";
 
 function App() {
   
@@ -29,11 +29,11 @@ function App() {
     <div className="App">
       {/* Render MyProSidebar */}
       <Routes>
-        <Route path="/userdashboard" element={<MyProSidebar />} />
+        <Route path="/userdashboard/:userId" element={<MyProSidebar />} />
         <Route path="/tasks" element={<MyProSidebar />} />
         <Route path="/tournaments" element={<MyProSidebar />} />
         <Route path="/team" element={<MyProSidebar />} /> 
-        <Route path="/profile" element={<MyProSidebar />} />
+        <Route path="/profile/:userId" element={<MyProSidebar />} />
         <Route path="/code" element={<MyProSidebar />} />
         <Route path="/quizpage" element={<MyProSidebar />} />
         <Route path="/quiz/:quizName" element={<MyProSidebar />} /> 
@@ -49,17 +49,17 @@ function App() {
 
       {/* Main content routes */}
       <Routes>
-        <Route path="/userdashboard" element={<Dashboard />} />
+        <Route path="/userdashboard/:userId" element={<Dashboard />} />
         <Route path="/admindashboard" element={<AdminDashboard />} />
         <Route path="/team" element={<TeamsPage />} />
         <Route path="/tasks" element={<Tasks />} />
         <Route path="/tournaments" element={<Tournaments />} />
-        <Route path="/profile" element={<Profile />} />
+        <Route path="/profile/:userId" element={<Profile />} />
         <Route path="/code" element={<Code />} />
         <Route path="/quizpage" element={<QuizPage />} />
         <Route path="/tutorials" element={<VideoPage />} />
         <Route path="/quiz/:quizName" element={<Question />} />
-        <Route path="/overview" element={<CourseDetail />} />
+        <Route path="/overview" element={<CourseForm />} />
 
         {/* Non-sidebar routes */}
         <Route path="/" element={<Login />} />

@@ -1,184 +1,397 @@
 /* Overview.css */
 
-/* Base styles */
-.CourseDetail {
-  max-width: 1200px;
-  margin: 0 auto;
+/* General Styles */
+.course-form-container {
+  margin: 20px;
   padding: 20px;
+  border-radius: 8px;
+  margin-left: 156px;
 }
 
-.course-overview {
-  text-align: center;
-  margin-bottom: 30px;
+.add-course-btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
 }
 
-.course-overview h1 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-  color: #333;
+.add-course-btn:hover {
+  background-color: #0056b3;
 }
 
-.course-meta span {
-  display: block;
-  font-size: 1rem;
-  color: #666;
+.course-form {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  margin-left: 156px;
+  margin-bottom: 50px;
+}
+
+.form-group {
   margin-bottom: 15px;
 }
 
-.course-description {
-  font-size: 1.125rem;
-  color: #444;
-  line-height: 1.6;
+.form-group label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 5px;
+  font-weight: bold;
 }
 
-.cta {
-  display: inline-block;
+.form-input,
+.form-textarea,
+.select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.form-input {
+  height: 40px;
+}
+
+.form-textarea {
+  height: 100px;
+}
+
+.module {
   margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f1f1f1;
+}
+
+.submodule {
+  margin-top: 15px;
+}
+
+.add-module-btn,
+.add-submodule-btn,
+.submit-btn {
   padding: 10px 20px;
-  font-size: 1rem;
-  color: #fff;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+.add-module-btn:hover,
+.add-submodule-btn:hover,
+.submit-btn:hover {
+  background-color: #218838;
+}
+
+.add-module-btn {
+  margin-top: 10px;
+}
+
+.submit-btn {
+  margin-top: 20px;
   background-color: #007bff;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3;
+}
+
+h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #333;
+}
+
+textarea,
+input[type="text"],
+select {
+  font-size: 14px;
+}
+
+
+
+button {
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* ReadingTemplate Styles */
+.reading-template {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #aaa;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles for the document editor */
+.document-editor {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.document-heading {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 18px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.document-quill-editor {
+  height: 300px; /* Adjust height as needed */
+  margin-bottom: 10px;
+}
+
+.document-save-btn {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
-.cta:hover {
+.document-save-btn:hover {
   background-color: #0056b3;
 }
 
-/* Course content styles */
-.course-content h2 {
-  font-size: 1.75rem;
-  margin-bottom: 20px;
-  color: #333;
-}
-
-.content-list {
-  list-style-type: none;
-  padding: 0;
-}
-
-.content-list li {
-  margin-bottom: 15px;
+/* Small box for saved content */
+.document-small-box {
+  border: 1px solid #ddd;
   padding: 15px;
-  background-color: #f8f9fa;
+  margin-top: 10px;
+  border-radius: 5px;
+  background-color: #f1f1f1;
+}
+
+.document-small-box h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.document-content {
+  font-size: 14px;
+}
+
+.document-edit-btn {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s;
 }
 
-.content-list li.active {
-  background-color: #e2e6ea;
+.document-edit-btn:hover {
+  background-color: #0056b3;
 }
 
-.submodules {
-  margin-top: 10px;
-  padding-left: 20px;
+/* Additional Styles for SubmoduleSelector */
+.submodule-selector {
+  margin-bottom: 15px;
 }
 
-.submodule {
-  font-size: 1rem;
-  color: #666;
+.submodule-select {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* VideoTemplate Styles */
+.video-template {
+  margin: 20px;
+}
+
+.video-url-input {
+  width: 100%;
+  padding: 8px;
   margin-bottom: 10px;
 }
 
-.toggle-arrow {
-  float: right;
+.save-button {
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
 }
 
-.button-icon {
-  transition: transform 0.3s ease-in-out;
+.save-message {
+  color: green;
+  margin-top: 10px;
 }
 
-.invisible {
-  display: none;
-  visibility: hidden;
+.video-player {
+  margin-top: 20px;
 }
 
-li.active .button-icon {
-  transform: rotate(180deg);
+/*Quiz Template */
+.quiz-template {
+  margin: 20px 0;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Responsive styles */
+.quiz-template h3 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.quiz-question {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.question-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.quiz-options {
+  margin-top: 10px;
+}
+
+.option-input {
+  width: 90%;
+  padding: 8px;
+  margin-bottom: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.correct-answer-select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.add-question-button {
+  padding: 12px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 20px;
+}
+
+.add-question-button:hover {
+  background-color: #218838;
+}
+
+.quiz-template input[type="text"]:focus,
+.quiz-template select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+.quiz-template input[type="text"],
+.quiz-template select {
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+
+
+/* Responsive Design */
 @media (max-width: 768px) {
-  .CourseDetail {
-    padding: 15px;
-  }
-
-  .course-overview h1 {
-    font-size: 1.75rem;
-  }
-
-  .course-meta span {
-    font-size: 0.875rem;
-  }
-
-  .course-description {
-    font-size: 1rem;
-  }
-
-  .cta {
-    padding: 8px 16px;
-    font-size: 0.875rem;
-  }
-
-  .course-content h2 {
-    font-size: 1.5rem;
-  }
-
-  .content-list li {
+  .course-form-container {
     padding: 10px;
-    font-size: 0.875rem;
+    margin-left: 0;
   }
 
-  .submodule {
-    font-size: 0.875rem;
+  .course-form {
+    margin-left: 0;
   }
 
-  .toggle-arrow {
-    height: 20px;
-    width: 20px;
+  .form-group {
+    margin-bottom: 10px;
   }
+
+  .form-input,
+  .form-textarea {
+    font-size: 13px;
+  }
+
+  .document-save-btn {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .add-module-btn,
+  .add-submodule-btn,
+  .submit-btn {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .document-small-box {
+    padding: 10px;
+  }
+
+  
 }
 
+/* For smaller screens (max-width: 480px) */
 @media (max-width: 480px) {
-  .CourseDetail {
-    padding: 10px;
-  }
-
-  .course-overview h1 {
-    font-size: 1.5rem;
-  }
-
-  .course-meta span {
-    font-size: 0.75rem;
-  }
-
-  .course-description {
-    font-size: 0.875rem;
-  }
-
-  .cta {
-    padding: 6px 12px;
-    font-size: 0.75rem;
-  }
-
-  .course-content h2 {
-    font-size: 1.25rem;
-  }
-
-  .content-list li {
+  .document-heading {
+    font-size: 16px;
     padding: 8px;
-    font-size: 0.75rem;
   }
 
-  .submodule {
-    font-size: 0.75rem;
+  .video-player iframe {
+    height: 180px;
   }
 
-  .toggle-arrow {
-    height: 16px;
-    width: 16px;
+  .add-module-btn,
+  .add-submodule-btn {
+    width: 100%;
+    margin: 0;
+  }
+
+  .document-save-btn,
+  .document-edit-btn {
+    width: 100%;
+    font-size: 13px;
+  }
+
+  .document-small-box h3 {
+    font-size: 16px;
   }
 }

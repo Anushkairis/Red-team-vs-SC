@@ -61,7 +61,7 @@ const MyProSidebar = () => {
               <Link to="/tournaments">Tournaments</Link>
             </MenuItem>
             <MenuItem icon={<FontAwesomeIcon icon={faUser} />}>
-              <Link to="/profile">Profile</Link>
+              <Link to="/profile/:userId">Profile</Link>
             </MenuItem>
           </Menu>
         </SidebarContent>

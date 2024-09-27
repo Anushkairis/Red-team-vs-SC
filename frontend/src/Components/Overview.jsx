@@ -1,80 +1,147 @@
+// CourseForm.jsx
 import React, { useState } from 'react';
 import './Overview.css';
+import SubmoduleSelector from './SubmoduleSelector.jsx';
+import axios from 'axios';
 
-function CourseDetail() {
-  const [activeIndices, setActiveIndices] = useState([]);
+const CourseForm = () => {
+  const [showForm, setShowForm] = useState(false);
+  const [courseName, setCourseName] = useState('');
+  const [duration, setDuration] = useState('');
+  const [description, setDescription] = useState('');
+  const [modules, setModules] = useState([
+    { title: '', submodules: [{ type: '', content: {} }] },
+  ]);
 
-  const toggleDropdown = (index) => {
-    setActiveIndices(prevActiveIndices => {
-      if (prevActiveIndices.includes(index)) {
-        // Remove the index if it's already active
-        return prevActiveIndices.filter(i => i !== index);
-      } else {
-        // Add the index if it's not active
-        return [...prevActiveIndices, index];
-      }
-    });
+  const handleAddModule = () => {
+    setModules([...modules, { title: '', submodules: [{ type: '', content: {} }] }]);
+  };
+
+  const handleAddSubmodule = (moduleIndex) => {
+    const newModules = [...modules];
+    newModules[moduleIndex].submodules.push({ type: '', content: {} });
+    setModules(newModules);
+  };
+
+  const handleModuleChange = (moduleIndex, e) => {
+    const newModules = [...modules];
+    newModules[moduleIndex][e.target.name] = e.target.value;
+    setModules(newModules);
+  };
+
+  const handleSubmoduleChange = (moduleIndex, submoduleIndex, updatedSubmodule) => {
+    const newModules = [...modules];
+    newModules[moduleIndex].submodules[submoduleIndex] = updatedSubmodule;
+    setModules(newModules);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const formData = {
+      courseName,
+      duration,
+      description,
+      modules,
+    };
+    console.log(formData);
+
+    try {
+      const response = await axios.post('http://localhost:5000/api/courses', formData);
+      console.log('Course saved:', response.data);
+      alert('Course saved successfully!');
+    } catch (error) {
+      console.error('Error saving course:', error);
+      alert('Error saving course');
+    }
   };
 
   return (
-    <div className="CourseDetail">
-      <section className="course-overview">
-        <h1>Full-Stack Web Development</h1>
-        <div className="course-meta">
-          <span>Duration: 10 Weeks</span>
-        </div>
-        <p className="course-description">
-          Learn how to build complete web applications from scratch using modern technologies like React, Node.js, and MongoDB.
-        </p>
-        <button className="cta">Enroll Now</button>
-      </section>
+    <div className="course-form-container">
+      {!showForm && (
+        <button className="add-course-btn" onClick={() => setShowForm(true)}>
+          Add Course +
+        </button>
+      )}
 
-      <section className="course-content">
-        <h2>Course Content</h2>
-        <ul className="content-list">
-          {[
-            'Module 1: Introduction to Web Development',
-            'Module 2: Frontend Basics',
-            'Module 3: Advanced JavaScript and React',
-            'Module 4: Backend Development with Node.js',
-            'Module 5: Databases and MongoDB',
-            'Module 6: Full-Stack Project'
-          ].map((module, index) => (
-            <li
-              key={index}
-              className={activeIndices.includes(index) ? 'active' : ''}
-              onClick={() => toggleDropdown(index)}
-            >
-              {module}
-              <span className="toggle-arrow">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  className="button-icon"
+      {showForm && (
+        <form onSubmit={handleSubmit} className="course-form">
+          <div className="form-group">
+            <label>Course Name:</label>
+            <input
+              type="text"
+              value={courseName}
+              onChange={(e) => setCourseName(e.target.value)}
+              required
+              className="form-input"
+            />
+          </div>
+
+          <div className="form-group">
+            <label>Duration:</label>
+            <input
+              type="text"
+              value={duration}
+              onChange={(e) => setDuration(e.target.value)}
+              required
+              className="form-input"
+            />
+          </div>
+
+          <div className="form-group">
+            <label>Description:</label>
+            <textarea
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              required
+              className="form-textarea"
+            />
+          </div>
+
+          <div className="form-group">
+            <label>Course Modules:</label>
+            {modules.map((module, moduleIndex) => (
+              <div key={moduleIndex} className="module">
+                <label>Module Title:</label>
+                <input
+                  type="text"
+                  name="title"
+                  value={module.title}
+                  onChange={(e) => handleModuleChange(moduleIndex, e)}
+                  required
+                  className="form-input"
+                />
+
+                {module.submodules.map((submodule, subIndex) => (
+                  <div key={subIndex} className="submodule">
+                    <SubmoduleSelector
+                      moduleIndex={moduleIndex}
+                      submoduleIndex={subIndex}
+                      submodule={submodule}
+                      onSubmoduleChange={handleSubmoduleChange}
+                    />
+                  </div>
+                ))}
+
+                <button
+                  type="button"
+                  className="add-submodule-btn"
+                  onClick={() => handleAddSubmodule(moduleIndex)}
                 >
-                  <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z" />
-                  <path
-                    d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"
-                    className="invisible"
-                  />
-                  <path d="M0 0h24v24H0z" fill="none" />
-                </svg>
-              </span>
-              {activeIndices.includes(index) && (
-                <div className="submodules">
-                  <div className="submodule">Submodule {index + 1}.1</div>
-                  <div className="submodule">Submodule {index + 1}.2</div>
-                  <div className="submodule">Submodule {index + 1}.3</div>
-                </div>
-              )}
-            </li>
-          ))}
-        </ul>
-      </section>
+                  Add Submodule
+                </button>
+              </div>
+            ))}
+
+            <button type="button" className="add-module-btn" onClick={handleAddModule}>
+              Add Module
+            </button>
+          </div>
+
+          <button type="submit" className="submit-btn">Submit Course</button>
+        </form>
+      )}
     </div>
   );
-}
+};
 
-export default CourseDetail;
+export default CourseForm;
