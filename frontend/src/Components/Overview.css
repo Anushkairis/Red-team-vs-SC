@@ -130,79 +130,125 @@ button:hover {
 
 /* ReadingTemplate Styles */
 .reading-template {
-  margin-top: 20px;
-  padding: 15px;
-  border: 1px solid #aaa;
-  border-radius: 8px;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 16px;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 /* Styles for the document editor */
-.document-editor {
-  border: 1px solid #ddd;
-  padding: 15px;
-  margin-bottom: 15px;
-  border-radius: 5px;
-  background-color: #fff;
-}
-
-.document-heading {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  font-size: 18px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-}
-
 .document-quill-editor {
-  height: 300px; /* Adjust height as needed */
-  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  
 }
 
+/* Styles for the heading input */
+.document-heading {
+  padding: 10px;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Styles for the Quill editor */
+.document-quill-editor {
+  
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Styles for the document small box (view mode) */
+.document-small-box {
+  padding: 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+  
+}
+
+/* Heading inside the small box */
+.document-small-box h3 {
+  margin: 0 0 10px;
+  font-size: 20px;
+  color: #333;
+}
+
+/* Content inside the small box */
+.document-content {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+  
+}
+
+/* Styles for the edit and save buttons */
+.document-edit-btn,
 .document-save-btn {
-  padding: 10px 15px;
-  background-color: #007bff;
-  color: white;
+  padding: 8px ;
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
+  background-color: #0056b3;
+  color: white;
+  font-size: 16px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
+.document-edit-btn:hover,
 .document-save-btn:hover {
   background-color: #0056b3;
 }
 
-/* Small box for saved content */
-.document-small-box {
-  border: 1px solid #ddd;
-  padding: 15px;
-  margin-top: 10px;
-  border-radius: 5px;
-  background-color: #f1f1f1;
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .reading-template {
+    padding: 12px;
+  }
+
+  .document-heading {
+    font-size: 16px;
+  }
+
+  .document-small-box h3 {
+    font-size: 18px;
+  }
+
+  .document-content {
+    font-size: 15px;
+  }
+
+  .document-edit-btn,
+  .document-save-btn {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
 }
 
-.document-small-box h3 {
-  font-size: 18px;
-  margin-bottom: 5px;
-}
+@media (max-width: 480px) {
+  .document-small-box {
+    padding: 12px;
+  }
 
-.document-content {
-  font-size: 14px;
-}
+  .document-small-box h3 {
+    font-size: 16px;
+  }
 
-.document-edit-btn {
-  padding: 5px 10px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
+  .document-content {
+    font-size: 14px;
+  }
 
-.document-edit-btn:hover {
-  background-color: #0056b3;
+  .document-edit-btn,
+  .document-save-btn {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
 }
 
 /* Additional Styles for SubmoduleSelector */

@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css'; // Import Quill's CSS for styling
 
+
 const ReadingTemplate = ({ content, onContentChange }) => {
   const [heading, setHeading] = useState(content.heading || '');
   const [description, setDescription] = useState(content.description || '');
@@ -16,8 +17,8 @@ const ReadingTemplate = ({ content, onContentChange }) => {
     // Call the function to handle the save process
     try {
       // Ensure that onContentChange is being called correctly
-      await onContentChange(readingData); 
-      
+      await onContentChange(readingData);
+
       // Set save and editing states
       setIsSaved(true);
       setIsEditing(false); // Exit editing mode after saving
@@ -60,10 +61,6 @@ const ReadingTemplate = ({ content, onContentChange }) => {
             formats={ReadingTemplate.formats}
             placeholder="Enter your content (you can add images, tables, lists, etc.)"
           />
-
-          <button onClick={handleSave} className="document-save-btn">
-            Save
-          </button>
         </div>
       ) : (
         <div className="document-small-box">
@@ -76,6 +73,13 @@ const ReadingTemplate = ({ content, onContentChange }) => {
             Edit
           </button>
         </div>
+      )}
+
+      {/* Save Button is placed outside of document-editor but within isEditing */}
+      {isEditing && (
+        <button onClick={handleSave} className="document-save-btn">
+          Save
+        </button>
       )}
     </div>
   );
